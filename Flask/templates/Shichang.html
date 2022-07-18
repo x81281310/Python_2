@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords"
+          content="HTML5 Template, Themeforest, agency, blog, business, clean, corporate, creative, modern, one page, photography, portfolio">
+    <meta name="description"
+          content="Discover Oscarthemes - Business HTML5 Template, responsive Bootstrap templates, & HTML templates">
+    <meta name="theme-color" content="#4b6fff">
+    <title>基于python的猫眼电影爬虫及分析</title>
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="static/css/animate.css" rel="stylesheet">
+    <!-- Flat Icon CSS -->
+    <link href="static/css/svg.css" rel="stylesheet">
+    <!-- Slick Slider CSS -->
+    <link href="static/css/slick.css" rel="stylesheet">
+    <!-- Responsive Menu css -->
+    <link rel="stylesheet" href="static/css/responsivemenu.css">
+    <!-- Typography CSS -->
+    <link href="static/css/typography.css" rel="stylesheet">
+    <!-- Widget Css -->
+    <link href="static/css/widget.css" rel="stylesheet">
+    <!-- Short Code CSS -->
+    <link href="static/css/shortcode.css" rel="stylesheet">
+    <!-- Custom Style CSS -->
+    <link href="static/css/style.css" rel="stylesheet">
+    <!-- Color CSS -->
+    <link href="static/css/color.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="static/css/responsive.css" rel="stylesheet">
+</head>
+<body class="grad-version" id="home">
+<script src="static/js/echarts.min.js"></script>
+<script src="static/js/jquery-1.12.4.js"></script>
+<!-- LOADER -->
+<div id="loader-overflow">
+    <div id="loader3" class="loader-cont">Please enable JS</div>
+</div>
+<div class="main-wrapper">
+    <!-- Header Start -->
+    <header id="header" class="oscar-header-4">
+        <!-- Navigation Outer Wrap Start -->
+        <div class="nav-outer sticky-header">
+            <div class="container">
+                <!-- Logo Start -->
+                <h1 class="logo">
+                    <a href="http://127.0.0.1:5000/index" title="oscarthemes">
+                        <img src="static/picture/maoyan.jpeg" style="height:100px;width:100px;" alt="oscarthemes">
+                    </a>
+                </h1>
+                <!-- /Logo End -->
+                <div class="pull-right menu-holder">
+                    <div class="mobile-menu"></div>
+                    <div id="opg-nav" class="main-menu navigation">
+                        <nav>
+                            <ul>
+                                <li class="active"><a href="http://127.0.0.1:5000/index">首页</a></li>
+                                <li><a href="http://127.0.0.1:5000/Top100">综合</a></li>
+                                <li><a href="http://127.0.0.1:5000/Ciyun">词云</a></li>
+                                <li><a href="http://127.0.0.1:5000/Time">上映时间</a></li>
+                                <li><a href="http://127.0.0.1:5000/Pingfen">评分</a></li>
+                                <li><a href="http://127.0.0.1:5000/Shichang">时长</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Navigation Outer Wrap End -->
+    </header>
+    <!-- /Header End -->
+
+    <!-- oscar Contant Wrapper Start-->
+    <div id="main-contant" class="main-contant">
+
+        <!-- Features Section Start -->
+        <section id="featured" class="gray-bg">
+            <div class="container">
+                <!-- Section Heading Start -->
+                <div class="section-heading-2 text-center mb-61">
+                    <h2 class="title">时长</h2>
+                </div>
+                <!-- Section Heading End -->
+                <!-- oscar Contant Wrapper Start-->
+                <div id="container1" style="height: 400px;margin-top: 100px;"></div>
+
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+
+                <script type="text/javascript">
+                    var dom = document.getElementById("container1");
+                    var myChart = echarts.init(dom);
+                    var app = {};
+
+                    var option;
+
+
+                    option = {
+                        xAxis: {
+                            name: '评分',
+                            nameTextStyle: {
+                                fontWeight: "bold"
+                            },
+                            scale: true
+                        },
+                        yAxis: {
+                            name: '时长',
+                            nameTextStyle: {
+                                fontWeight: "bold"
+                            },
+                            scale: true
+                        },
+                        title: {
+                            text: '评分-时长 涟漪散点图'
+                        },
+                        series: [{
+
+                            type: 'effectScatter',
+                            symbolSize: 20,
+                            data: [
+                                [93, 8],
+                                [238, 9.8]
+                            ]
+                        }, {
+                            type: 'scatter',
+                            data: {{test}},
+                        }]
+                    };
+
+                    if (option && typeof option === 'object') {
+                        myChart.setOption(option);
+                    }
+
+                </script>
+
+                <div id="container2" style="height: 1200px;margin-top: 50px;"></div>
+
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/extension/dataTool.min.js"></script>
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/china.js"></script>
+                <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/map/js/world.js"></script>
+
+
+                <script type="text/javascript">
+                    var dom = document.getElementById("container2");
+                    var myChart = echarts.init(dom);
+                    var app = {};
+
+                    var option;
+
+
+                    option = {
+                        title: {
+                            text: '时长',
+                            subtext:'时长鉴于110分钟与130分钟之间的影片'
+                        },
+                        tooltip: {
+                            trigger: 'axis',
+                            axisPointer: {
+                                type: 'shadow'
+                            }
+                        },
+                        legend: {
+                            data: ['时长']
+                        },
+                        grid: {
+                            left: '3%',
+                            right: '4%',
+                            bottom: '10%',
+                            containLabel: true,
+                            backgroundColor: '#ccc'
+                        },
+                        xAxis: {
+                            type: 'value',
+                            boundaryGap: [0, 0.3]
+                        },
+                        yAxis: {
+                            type: 'category',
+                            data: {{ name | tojson }}
+                        },
+                        series: [
+                            {
+                                name: '时长',
+                                type: 'bar',
+                                data: {{ long_time }}
+                            }
+                        ]
+                    };
+
+                    if (option && typeof option === 'object') {
+                        myChart.setOption(option);
+                    }
+
+                </script>
+
+            </div>
+        </section>
+    </div>
+    <!-- Features Section End -->
+
+
+    <div class="copy-right light-black-bg">
+        <div class="container">
+            <div class="pull-left">
+                <p>基于python的猫眼电影爬虫及分析</p>
+            </div>
+            <div class="pull-right">
+                <ul class="short-nav">
+                    <li><a>小组成员：</a></li>
+                    <li><a>陈天妮</a></li>
+                    <li><a>董欣雨</a></li>
+                    <li><a>李益清</a></li>
+                    <li><a>任晓涵</a></li>
+                    <li><a>许吉帆</a></li>
+                </ul><!-- / Ul -->
+            </div>
+        </div>
+    </div><!-- /Copyright End-->
+</div><!-- /Main Wrapper End-->
+
+<!-- jQuery -->
+<script src="static/js/js-bundle.js"></script>
+<!--Custom Script-->
+<script src="static/js/custom.js"></script>
+</body>
+</html>

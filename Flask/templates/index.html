@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="robots" content="index, follow" > 
+<meta name="keywords" content="HTML5 Template, Themeforest, agency, blog, business, clean, corporate, creative, modern, one page, photography, portfolio" > 
+<meta name="description" content="Discover Oscarthemes - Business HTML5 Template, responsive Bootstrap templates, & HTML templates" > 
+<meta name="theme-color" content="#4b6fff">
+<title>基于python的猫眼电影爬虫及分析</title>
+<!-- Bootstrap -->
+<link href="static/css/bootstrap.css" rel="stylesheet">
+<!-- Animate CSS -->
+<link href="static/css/animate.css" rel="stylesheet">
+<!-- Flat Icon CSS -->
+<link href="static/css/svg.css" rel="stylesheet">
+<!-- Slick Slider CSS -->
+<link href="static/css/slick.css" rel="stylesheet">
+<!-- Responsive Menu css -->
+<link rel="stylesheet" href="static/css/responsivemenu.css">
+<!-- Typography CSS -->
+<link href="static/css/typography.css" rel="stylesheet">   
+<!-- Widget Css -->
+<link href="static/css/widget.css" rel="stylesheet">
+<!-- Short Code CSS -->
+<link href="static/css/shortcode.css" rel="stylesheet">
+<!-- Custom Style CSS -->
+<link href="static/css/style.css" rel="stylesheet">
+<!-- Color CSS -->
+<link href="static/css/color.css" rel="stylesheet">
+<!-- Responsive CSS -->
+<link href="static/css/responsive.css" rel="stylesheet">
+</head>
+<body class="grad-version" id="home">
+<script src="static/js/echarts.min.js"></script>
+<script src="static/js/jquery-1.12.4.js"></script>
+<!-- LOADER --> 
+<div id="loader-overflow">
+  <div id="loader3" class="loader-cont">Please enable JS</div>
+</div> 
+<div class="main-wrapper">
+	<!-- Header Start -->     
+	<header id="header" class="oscar-header-4">
+		<!-- Navigation Outer Wrap Start -->
+		<div class="nav-outer sticky-header">
+			<div class="container">
+				<!-- Logo Start -->
+				<h1 class="logo">
+					<a href="http://127.0.0.1:5000/index" title="oscarthemes">
+						<img src="static/picture/maoyan.jpeg"  style="height:100px;width:100px;" alt="oscarthemes">
+					</a>
+				</h1>
+				<!-- /Logo End -->
+				<div class="pull-right menu-holder">
+					<div class="mobile-menu"></div>
+					<div id="opg-nav" class="main-menu navigation">
+						<nav>
+							<ul>
+								<li class="active"><a href="#home">首页</a></li>
+								<li><a href="http://127.0.0.1:5000/Top100">综合</a></li>
+								<li><a href="http://127.0.0.1:5000/Ciyun">词云</a></li>
+								<li><a href="http://127.0.0.1:5000/Time">上映时间</a></li>
+								<li><a href="http://127.0.0.1:5000/Pingfen">评分</a></li>
+                                <li><a href="http://127.0.0.1:5000/Shichang">时长</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<!-- /Navigation Outer Wrap End -->
+	</header>
+	<!-- /Header End -->
+
+	<!-- Static Banner Wrap -->
+	<div class="main-banner">
+		<div class="container">
+			<div class="row">
+				<div data-aos="fade-right" class="col-md-6 col-sm-6">
+					<div class="banner-caption-wrap">
+						<h1 class="banner-title">基于Python的<span>猫眼电影爬虫与分析</span></h1>
+					</div>
+				</div>
+				<div data-aos="fade-left" class="col-md-6 col-sm-6">
+					<div class="banner-thumb" >
+						<img src="static/picture/banner-img.svg"  alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Static Banner Wrap -->
+
+	<!-- oscar Contant Wrapper Start-->  
+	<div id="main-contant" class="main-contant">  
+
+		<!-- Features Section Start -->
+		<section id="featured" class="gray-bg">
+			<div class="container">
+				<!-- Section Heading Start -->
+				<div class="section-heading-2 text-center mb-61">
+					<h2 class="title">Top 100</h2>
+				</div>
+				<!-- Section Heading End -->
+                <table class="table table-striped">
+                    <tr>
+                        <td>片名</td>
+                        <td>主演</td>
+                        <td>上映时间</td>
+                        <td>评分</td>
+                        <td>时长</td>
+                    </tr>
+                    {% for info in infos %}
+                    <tr>
+                        <td>{{ info[0] }}</td>
+                        <td>{{ info[1] }}</td>
+                        <td>{{ info[2] }}</td>
+                        <td>{{ info[3] }}</td>
+                        <td>{{ info[5] }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+
+			</div>
+		</section>
+    </div>
+		<!-- Features Section End -->
+
+
+	<div class="copy-right light-black-bg">
+		<div class="container">
+			<div class="pull-left">
+				<p>Copyright &copy; 2021.Company name All rights reserved.<a target="_blank" href="https://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			</div>
+			<div class="pull-right">
+				<ul class="short-nav">
+					<li><a href="#">Terms of services</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Security</a></li>
+					<li><a href="#">Siemap</a></li>
+				</ul><!-- / Ul -->
+			</div>
+		</div>
+	</div><!-- /Copyright End-->
+</div><!-- /Main Wrapper End-->
+
+<!-- jQuery -->
+<script src="static/js/js-bundle.js"></script>
+<!--Custom Script-->
+<script src="static/js/custom.js"></script>
+</body>
+</html>
